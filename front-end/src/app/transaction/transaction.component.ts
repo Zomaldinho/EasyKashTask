@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 
@@ -8,7 +9,7 @@ import { ActivatedRoute, Params } from '@angular/router';
 })
 export class TransactionComponent implements OnInit {
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(private route: ActivatedRoute, private http:HttpClient) { }
   page;
   per_page;
   seller_id;
@@ -20,6 +21,8 @@ export class TransactionComponent implements OnInit {
       this.per_page = params.per_page
       this.seller_id = params.seller_id
     })
+
+    // Calling the api to get the data
   }
 
 }
