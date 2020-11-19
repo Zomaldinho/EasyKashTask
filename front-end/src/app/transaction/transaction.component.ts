@@ -14,7 +14,7 @@ export class TransactionComponent implements OnInit {
   per_page;
   seller_id;
   totalNum;
-  dataArray: MatTableDataSource<any>;
+  dataArray = new MatTableDataSource<any>();
   isLoaded = false;
   displayedColumns: string[] = ['id', 'user_id', 'title', 'fees', 'amount']
 
