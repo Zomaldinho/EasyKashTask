@@ -46,7 +46,8 @@ Transaction.sync();
 //   .catch(console.log);
 
 app.get('/transaction',(req,res)=>{
-  
+  let { page, per_page, seller_id } = req.query;
+  let offset = parseInt((page - 1) * per_page); //offset calculation to get the exact page elements
 })
 
 port = process.env.PORT || 5000;
