@@ -55,7 +55,20 @@ app.get('/transaction',(req,res)=>{
     offset: offset,
     limit: parseInt(per_page),
   })
-})
+  .then((tran) =>
+    res.json({
+      data: {
+        transaction: tran.rows,
+        paging: {
+          total: tran.count,
+          current_page: page,
+          per_page: per_page,
+        },
+      },
+    })
+  )
+  .catch(console.log);
+});
 
 port = process.env.PORT || 5000;
 app.listen(port, () => console.log(`App is running on port ${port}`));
