@@ -15,7 +15,28 @@ db.authenticate()
   .catch((e) => console.log(e)
 );
 
+//adding the table to the Database (if it's exists, it does nothing)
 Transaction.sync();
+
+//Below is the code I used to add the data inside the DB table
+
+// Transaction.bulkCreate([
+//   {
+//     user_id: 2,
+//     title: 'money transfer 23',
+//     fees: 25,
+//     amount: 350,
+//   },
+//   {
+//     user_id: 2,
+//     title: 'money transfer 24',
+//     fees: 25,
+//     amount: 2350,
+//   }
+// ])
+//   .then(() => console.log('success'))
+//   .catch(console.log);
+
 
 app = express();
 port = process.env.PORT || 5000;
