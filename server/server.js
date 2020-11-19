@@ -55,12 +55,12 @@ app.get('/transaction',(req,res)=>{
     offset: offset,
     limit: parseInt(per_page),
   })
-  .then((tran) =>
+  .then((recievedData) =>
     res.json({
       data: {
-        transaction: tran.rows,
+        transaction: recievedData.rows,
         paging: {
-          total: tran.count,
+          total: recievedData.count,
           current_page: page,
           per_page: per_page,
         },
