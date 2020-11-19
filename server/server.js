@@ -48,6 +48,13 @@ Transaction.sync();
 app.get('/transaction',(req,res)=>{
   let { page, per_page, seller_id } = req.query;
   let offset = parseInt((page - 1) * per_page); //offset calculation to get the exact page elements
+  Transaction.findAndCountAll({
+    where: {
+      user_id: seller_id,
+    },
+    offset: offset,
+    limit: parseInt(per_page),
+  })
 })
 
 port = process.env.PORT || 5000;
