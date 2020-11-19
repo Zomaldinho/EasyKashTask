@@ -14,8 +14,11 @@ export class TransactionComponent implements OnInit {
   seller_id;
 
   ngOnInit(): void {
+    // Getting query parameters and saving them into variables
     this.route.queryParams.subscribe((params: Params)=>{
-
+      this.page = params.page
+      this.per_page = params.per_page
+      this.seller_id = params.seller_id
     })
   }
 
