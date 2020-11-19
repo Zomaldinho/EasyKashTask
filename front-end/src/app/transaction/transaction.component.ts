@@ -16,7 +16,7 @@ export class TransactionComponent implements OnInit {
   totalNum;
   dataArray = new MatTableDataSource<any>();
   isLoaded = false;
-  displayedColumns: string[] = ['id', 'user_id', 'title', 'fees', 'amount']
+  displayedColumns: string[] = ['id', 'user_id', 'title', 'fees', 'amount'];
 
   // Function to get data from api
   getData(page, perPage, sellerId) {
@@ -44,7 +44,14 @@ export class TransactionComponent implements OnInit {
   }
 
   //function to handle paging events
-  onPageChange(event){
-    
+  onPageChange(event) {
+    let newPgae = event.pageIndex + 1;
+    this.getData(newPgae, this.per_page, this.seller_id).subscribe(
+      (recievedData) => {
+        this.totalNum = recievedData['data']['paging']['total'];
+        this.dataArray.data = recievedData['data']['transaction'];
+        this.isLoaded = true;
+      }
+    );
   }
 }
