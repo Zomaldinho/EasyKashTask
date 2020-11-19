@@ -2,6 +2,7 @@ const express = require('express');
 const { Sequelize } = require('sequelize');
 const Transaction = require('./Models/transaction')
 
+app = express();
 app.use(express.json());
 //Preventing CORS errors
 app.use((req, res, next) => {
@@ -44,8 +45,9 @@ Transaction.sync();
 //   .then(() => console.log('success'))
 //   .catch(console.log);
 
+app.get('/transaction',(req,res)=>{
+  
+})
 
-app = express();
 port = process.env.PORT || 5000;
-
 app.listen(port, () => console.log(`App is running on port ${port}`));
