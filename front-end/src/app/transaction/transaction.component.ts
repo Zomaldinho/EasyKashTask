@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { MatTableDataSource } from '@angular/material/table';
 import { ActivatedRoute, Params } from '@angular/router';
 
 @Component({
@@ -12,6 +13,9 @@ export class TransactionComponent implements OnInit {
   page;
   per_page;
   seller_id;
+  totalNum;
+  dataArray: MatTableDataSource<any>;
+  isLoaded = false;
 
   // Function to get data from api
   getData(page, perPage, sellerId) {
@@ -31,7 +35,9 @@ export class TransactionComponent implements OnInit {
     // Calling the api to get the data
     this.getData(this.page, this.per_page, this.seller_id).subscribe(
       (recievedData) => {
-        console.log(recievedData);
+        this.totalNum = recievedData['data']['paging']['total'];
+        this.dataArray.data = recievedData['data']['transaction'];
+        this.isLoaded = true;
       }
     );
   }
