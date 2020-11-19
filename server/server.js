@@ -4,8 +4,7 @@ const Transaction = require('./Models/transaction')
 
 app = express();
 app.use(express.json());
-//Preventing CORS errors
-app.use((req, res, next) => {
+app.use((req, res, next) => {  //Preventing CORS errors
   res.header('Access-Control-Allow-Origin', '*');
   next();
 });
