@@ -42,4 +42,9 @@ export class TransactionComponent implements OnInit {
       }
     );
   }
+
+  //function to handle paging events
+  onPageChange(event){
+    
+  }
 }
