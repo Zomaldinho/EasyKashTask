@@ -1,5 +1,6 @@
 const express = require('express');
 const { Sequelize } = require('sequelize');
+const Transaction = require('./Models/transaction')
 
 // connecting to an AWS cloud MySql database
 const db = new Sequelize('database_1', 'admin', 'test1234', {
@@ -11,7 +12,10 @@ const db = new Sequelize('database_1', 'admin', 'test1234', {
 //checking the connection is sucessfull
 db.authenticate()
   .then(() => console.log('Successfully connected to DB'))
-  .catch((e) => console.log(e));
+  .catch((e) => console.log(e)
+);
+
+Transaction.sync();
 
 app = express();
 port = process.env.PORT || 5000;

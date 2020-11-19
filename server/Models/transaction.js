@@ -1,4 +1,4 @@
-const { Sequelize } = require('sequelize');
+const { Sequelize, DataTypes } = require('sequelize');
 
 // connecting to an AWS cloud MySql database
 const db = new Sequelize('database_1', 'admin', 'test1234', {
