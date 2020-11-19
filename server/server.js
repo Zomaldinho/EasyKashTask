@@ -2,6 +2,13 @@ const express = require('express');
 const { Sequelize } = require('sequelize');
 const Transaction = require('./Models/transaction')
 
+app.use(express.json());
+//Preventing CORS errors
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*');
+  next();
+});
+
 // connecting to an AWS cloud MySql database
 const db = new Sequelize('database_1', 'admin', 'test1234', {
   host: 'database-1.c9r58b2hlfa8.eu-central-1.rds.amazonaws.com',
