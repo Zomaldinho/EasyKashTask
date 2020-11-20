@@ -40,6 +40,11 @@ It is written in JS using express framework, an AWS cloud MySQL database is used
 The server has 1 end points which is:
 * **Transaction Endpoint** : recieves a get request and returns all the transactions that belongs to the desired seller from the MySQL table
 
+### Testing
+
+I have added an Unit test and an Integration test to test the endpoint to run them simply open a terminal and run this code `npm run test` <br/>
+The tests were written with Mocha and Chai
+
 
 ## Frontend
 It is written in TS using Angular framwork and Bootstrap is used for styling. <br/>
@@ -55,3 +60,7 @@ The app contains 3 components and 2 pages. <br/>
 * **Home Page**: The default page which contain some basic info about the app
 * **Transaction Page**: You can reach it by typing this link <a>http://localhost:4200/transaction?page=1&per_page=10&seller_id=2</a> in the address bar to get information about the required user transaction
 
+### Testing
+
+I have added some Unit tests to test component behaviour to run them simply open a terminal inside front-end folder and run this code `ng test` <br/>
+The tests were written with Karma
