@@ -16,7 +16,7 @@ export class TransactionComponent implements OnInit {
   totalNum;
   dataArray = new MatTableDataSource<any>();
   isLoaded = false;
-  displayedColumns: string[] = ['id', 'user_id', 'title', 'fees', 'amount'];
+  displayedColumns: string[] = ['id', 'sellerId', 'title', 'fees', 'amount'];
 
   // Function to get data from api
   getData(page, perPage, sellerId) {
