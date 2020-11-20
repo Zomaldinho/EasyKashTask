@@ -4,12 +4,14 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "test": "mocha",
+    "test": "mocha || true",
     "start": "nodemon server.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "chai": "^4.2.0",
+    "chai-http": "^4.3.0",
     "express": "^4.17.1",
     "mocha": "^8.2.1",
     "mysql2": "^2.2.5",
