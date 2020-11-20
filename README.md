@@ -1,8 +1,8 @@
 # EasyKashTask
 
-A simple app to retrieve information about seller's transaction from a database and viewing them in a table with apgination<br/>
+A simple app to retrieve information about seller's transaction from a database and viewing them in a table with papgination<br/>
 You can control the seller information, the number of rows in each page and the page number from query parameters of the endpoint link <br/>
-This is a MEAN app which uses Angular and Bootstrap for the front end and Node JS (Express) and an AWS cloud MySQL database and sequlize as ORM for the backend
+This app uses Angular and Bootstrap for the front end and Node JS (Express) and an AWS cloud MySQL database and sequlize as ORM for the backend
 
 ## Installation
 
