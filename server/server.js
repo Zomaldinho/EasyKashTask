@@ -9,6 +9,10 @@ app.use((req, res, next) => {  //Preventing CORS errors
   next();
 });
 
+function hello(){
+  return 'hello world'
+}
+
 // connecting to an AWS cloud MySql database
 const db = new Sequelize('database_1', 'admin', 'test1234', {
   host: 'database-1.c9r58b2hlfa8.eu-central-1.rds.amazonaws.com',
@@ -71,4 +75,4 @@ app.get('/transaction',(req,res)=>{
 
 port = process.env.PORT || 5000;
 app.listen(port, () => console.log(`App is running on port ${port}`));
-module.exports = app
+module.exports = {app, hello, db}

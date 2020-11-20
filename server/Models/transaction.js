@@ -9,10 +9,6 @@ const db = new Sequelize('database_1', 'admin', 'test1234', {
 
 // defining a transaction table inside the database
 const Transaction = db.define('transaction', {
-  user_id: {
-    type: DataTypes.INTEGER,
-    allowNull: false,
-  },
   title: {
     type: DataTypes.STRING,
     allowNull: false,
