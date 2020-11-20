@@ -3,10 +3,6 @@ const Seller = require('../Models/seller')
 const Transaction = require('../Models/transaction')
 
 
-// creating one to many relation bet. sellers and transaction
-Seller.hasMany(Transaction);
-Transaction.belongsTo(Seller);
-
 //adding the table to the Database
 Seller.sync();
 Transaction.sync();

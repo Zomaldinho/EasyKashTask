@@ -36,6 +36,7 @@ export class TransactionComponent implements OnInit {
     // Calling the api to get the data
     this.getData(this.page, this.per_page, this.seller_id).subscribe(
       (recievedData) => {
+        console.log(recievedData)
         this.totalNum = recievedData['data']['paging']['total'];
         this.dataArray.data = recievedData['data']['transaction'];
         this.isLoaded = true;

@@ -20,7 +20,11 @@ const db = new Sequelize('database_1', 'admin', 'test1234', {
 //checking the connection is sucessfull
 db.authenticate()
   .then(() => console.log('Successfully connected to DB'))
-.catch((e) => console.log(e));
+  .catch((e) => console.log(e));
+
+// one to many relation bet. sellers and transaction
+Seller.hasMany(Transaction);
+Transaction.belongsTo(Seller);
 
 app.get('/transaction', (req, res) => {
   let { page, per_page, seller_id } = req.query;
@@ -50,4 +54,3 @@ app.get('/transaction', (req, res) => {
 port = process.env.PORT || 5000;
 app.listen(port, () => console.log(`App is running on port ${port}`));
 module.exports = {app, db};
-
