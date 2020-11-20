@@ -7,8 +7,8 @@ const db = new Sequelize('database_1', 'admin', 'test1234', {
   port: 3306,
 });
 
-// defining a transaction table inside the database
-const Seller = db.define('transaction', {
+// defining a sellers table inside the database
+const Seller = db.define('seller', {
   name: {
     type: DataTypes.STRING,
     allowNull: false,
